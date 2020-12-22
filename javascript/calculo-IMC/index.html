@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora | IMC</title>
+</head>
+<body>
+	<div>
+		<form>
+			<label>
+				<h1>IMC</h1>
+			</label>
+			<label>Altura: </label>
+			<input type="text" name="altura" class="imc-altura" value="">
+			<label>Peso: </label>
+			<input type="text" name="peso" class="imc-peso" value="">
+			<input type="submit" name="calcular" class="imc-button">
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		//Selectors
+		var imcButton = document.querySelector('.imc-button');	
+
+		var sla = "16900".replace(/^(\d{1})/, "$1.");
+
+		//Event Listeners
+		imcButton.addEventListener('click', calcularImc);
+
+		//Function
+		function calcularImc(event){
+			//Prevent form from submiting
+			event.preventDefault();
+
+			var altura = document.querySelector('.imc-altura').value;
+			var peso = document.querySelector('.imc-peso').value;
+
+			altura = parseFloat(altura).toFixed();
+			peso = parseFloat(peso).toFixed(2);
+			
+
+			console.log('Altura: ' + altura)		
+			console.log('Peso: ' + peso)
+
+			res = peso / (altura * altura).toFixed(2);
+			res = parseFloat(res);
+			console.log(res);
+
+			switch(res){
+				case res < 16:
+					console.log('Subpeso Severo');
+					break;
+				case res >= 16 || res <= 19.9:
+					console.log('Subpeso');
+					break;
+				case res >= 20 || res <= 24.9:
+					console.log('Normal');
+					break;
+			}
+
+		}
+	</script>
+
+</body>
+</html>
