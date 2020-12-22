@@ -1,0 +1,19 @@
+.quem-somos {
+	padding: 50px 0;
+	background-color: #000;
+	color: white;
+}
+
+.quem-somos h3{
+	padding: 30px 0;
+}
+
+.margin {
+	padding-bottom: 50px;
+	padding-top: 30px;	
+}
+
+.bg-footer {
+	background-color: #000;
+	color: #fff;
+}
