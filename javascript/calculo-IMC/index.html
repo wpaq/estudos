@@ -14,14 +14,14 @@
 			<label>Peso: </label>
 			<input type="text" name="peso" class="imc-peso" value="">
 			<input type="submit" name="calcular" class="imc-button">
+			<p>Resultado: <strong id="resultado"></strong></p>
 		</form>
 	</div>
 
 	<script type="text/javascript">
 		//Selectors
-		var imcButton = document.querySelector('.imc-button');	
-
-		var sla = "16900".replace(/^(\d{1})/, "$1.");
+		const imcButton = document.querySelector('.imc-button');	
+		const printRes = document.querySelector('#resultado');
 
 		//Event Listeners
 		imcButton.addEventListener('click', calcularImc);
@@ -34,27 +34,19 @@
 			var altura = document.querySelector('.imc-altura').value;
 			var peso = document.querySelector('.imc-peso').value;
 
-			altura = parseFloat(altura).toFixed();
-			peso = parseFloat(peso).toFixed(2);
+			//Calculado IMC
+			res = peso / (altura * altura);
+			res = res.toFixed(2);
 			
+			console.log('Valor: '+res);
 
-			console.log('Altura: ' + altura)		
-			console.log('Peso: ' + peso)
-
-			res = peso / (altura * altura).toFixed(2);
-			res = parseFloat(res);
-			console.log(res);
-
-			switch(res){
-				case res < 16:
-					console.log('Subpeso Severo');
-					break;
-				case res >= 16 || res <= 19.9:
-					console.log('Subpeso');
-					break;
-				case res >= 20 || res <= 24.9:
-					console.log('Normal');
-					break;
+			//Condiçtion
+			if(res < 16){
+				printRes.innerHTML = 'Subpeso Severo';
+			} else if(res >= 16 && res <= 19.9){
+				printRes.innerHTML = 'Subpeso';
+			} else if(res >= 20 && res <= 24.9){
+				printRes.innerHTML = 'Normal';
 			}
 
 		}
