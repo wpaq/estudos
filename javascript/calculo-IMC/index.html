@@ -9,10 +9,12 @@
 			<label>
 				<h1>IMC</h1>
 			</label>
-			<label>Altura: </label>
-			<input type="text" name="altura" class="imc-altura" value="">
+			<label>Altura(Metros): </label>
+			<input type="text" name="metros" class="metros" value="">
+			<label>Altura(Centímetros): </label>
+			<input type="text" name="cm" class="cm" value="">
 			<label>Peso: </label>
-			<input type="text" name="peso" class="imc-peso" value="">
+			<input type="text" name="peso" class="peso" value="">
 			<input type="submit" name="calcular" class="imc-button">
 			<p>Resultado: <strong id="resultado"></strong></p>
 		</form>
@@ -31,22 +33,27 @@
 			//Prevent form from submiting
 			event.preventDefault();
 
-			var altura = document.querySelector('.imc-altura').value;
-			var peso = document.querySelector('.imc-peso').value;
+			var metros = document.querySelector('.metros').value;
+			var cm = document.querySelector('.cm').value;
+			var peso = document.querySelector('.peso').value;
+			var altura = parseFloat(metros + '.' + cm);
 
-			//Calculado IMC
-			res = peso / (altura * altura);
-			res = res.toFixed(2);
-			
-			console.log('Valor: '+res);
+			//Calculo IMC
+			res = (peso / (altura ** 2)).toFixed(2);
 
-			//Condiçtion
+			//Condiction
 			if(res < 16){
 				printRes.innerHTML = 'Subpeso Severo';
 			} else if(res >= 16 && res <= 19.9){
 				printRes.innerHTML = 'Subpeso';
 			} else if(res >= 20 && res <= 24.9){
 				printRes.innerHTML = 'Normal';
+			} else if(res >= 25 && res <= 29.9){
+				printRes.innerHTML = 'Sobrepeso';
+			} else if(res >= 30 && res <= 39.9){
+				printRes.innerHTML = 'Obeso';
+			} else if(res >= 40){
+				printRes.innerHTML = 'Obeso Mórbido';
 			}
 
 		}
