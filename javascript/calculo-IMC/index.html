@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 	<title>Calculadora | IMC</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div>
+	<div class="bckImg">
+		<img src="./cell.png">
+	</div>
+	
+	<div class="content">
 		<form>
 			<label>
-				<h1>IMC</h1>
+				<h1 id="titleForm">IMC</h1>
 			</label>
-			<label>Altura(Metros): </label>
+			<label>Altura (Metros): </label>
 			<input type="text" name="metros" class="metros" value="">
-			<label>Altura(Centímetros): </label>
+			<label>Altura (Centímetros): </label>
 			<input type="text" name="cm" class="cm" value="">
 			<label>Peso: </label>
 			<input type="text" name="peso" class="peso" value="">
 			<input type="submit" name="calcular" class="imc-button">
+			<br>
 			<p>Resultado: <strong id="resultado"></strong></p>
 		</form>
 	</div>
@@ -37,6 +44,7 @@
 			var cm = document.querySelector('.cm').value;
 			var peso = document.querySelector('.peso').value;
 			var altura = parseFloat(metros + '.' + cm);
+			console.log(altura)
 
 			//Calculo IMC
 			res = (peso / (altura ** 2)).toFixed(2);
