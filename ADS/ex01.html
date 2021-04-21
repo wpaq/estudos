@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ex01</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	diaSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quinta-feira'];
+
+	d = new Date();
+	d.getDay();
+	for(var i in diaSemana){
+		if (d == 'quinta-feira' && diaSemana[i] == 'quinta-feira') {
+			document.write("PROMOÇÃO! Assine qualquer plano hoje e receba 30 dias grátis!");
+		}
+		else {
+			document.write("Hoje não é terça-feira!")
+		}
+	}
+
+
+	
+	document.write(d);
+</script>
+</html>

@@ -8,6 +8,7 @@
 
 body {
 	font-family: Raleway, sans;
+	font-size: 14pt;
 }
 
 .content {
@@ -16,10 +17,15 @@ body {
 	left: 0;	
 	display: flex;
 	padding: 10px;
-	margin: 30px auto;
+	margin: 80px auto;
 	width: 100%;
 	justify-content: center;
 	z-index: 2;
+	overflow: hidden;
+}
+
+.content form {
+	width: 240px;
 }
 
 .content label {
@@ -28,7 +34,7 @@ body {
 }
 
 .metros, .cm, .peso {
-	width: 97%;
+	width: 100%;
 }
 
 
@@ -39,8 +45,7 @@ body {
 }
 
 .content form p {
-	margin-top: 10px;
-	font-size: 10pt;
+	margin-top: 25px;
 }
 
 .imc-button {
@@ -61,9 +66,68 @@ body {
 	width: 100%;
 	display: flex;	
 	justify-content: center;
-	margin: 10px auto;	
+	align-items: center;
+	margin: 0 auto;	
 	position: absolute;
 	left: 0;
 	top: 0;
 	z-index: 0;
+	overflow: hidden;
+}
+
+.bckImg img {
+	margin-top: 25px;
+	height: 40rem;
+}
+
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 30pt;
+  }
+
+  .bckImg img {
+	margin-top: 25px;
+	height: 105rem;
+  }
+
+  .content {
+	position: absolute;
+	top: 0;
+	left: 0;	
+	display: flex;
+	padding: 100px;
+	margin: 150px auto;
+	width: 100%;
+	justify-content: center;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.content form {
+	width: 500px;
+}
+
+.metros, .cm, .peso {
+	width: 100%;
+	height: 5rem;
+	margin: 2rem 0;
+	padding: 30px;
+}
+
+.content form p {
+	margin-top: 50px;
+}
+
+.imc-button {
+	display: flex;
+	margin: 10px auto;
+	justify-content: center;
+	border: none;
+	width: 50%;
+	font-size: 30pt;
+	height: 6rem;
+	background: #48D1CC;
+}
+
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>O Sol</title>
+	<script type="text/javascript" src="_js/test.js"></script>
+</head>
+<body>
+	<figure class="imagem">
+		<img src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2019/07/sol.jpg" onclick="debug(), moveon(), hide(this, false)">
+		<figcaption>O Sol</figcaption>
+	</figure>
+	
+	<!-- CSS Style -->
+	<style type="text/css">
+		.imagem img{
+			width: 250px;
+			height: 250px;
+			display: block;
+			margin: auto;
+		}
+		.imagem figcaption{
+			text-align: center;
+			font-weight: bold;
+			font-size: 40px;
+			color: blue;
+		}
+	</style>
+
+	<script>
+		function moveon() {
+		 // Exibe uma caixa de diálogo modal para fazer uma pergunta ao usuário
+		 var answer = confirm("Ready to move on?");
+		 // Se ele clicou no botão "OK", faz o navegador carregar uma nova página
+		 if (answer) window.location = "http://google.com";
+		}
+		// Executa a função definida acima por 1 minuto (60.000 milissegundos) a partir de agora.
+		setTimeout(moveon, 60000);
+	</script>
+</body>
+</html>
